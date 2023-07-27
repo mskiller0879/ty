@@ -1,0 +1,124 @@
+
+@media (max-width:750px) {
+    .qqq{
+        opacity: 0;
+        transition: opacity 0.5s
+    }
+    .mid-section , .p-r{
+        opacity: 0;
+        transition: opacity 0.5s
+    }
+    .min1 {
+        display: flex;
+        flex-direction: column;
+
+    } 
+    .center{
+        margin-top: 400px;
+        margin-left: 180px;
+        opacity: 0.7;
+        display: flex;
+        flex-direction: column;
+        transition: margin 1s;
+    }
+    .pic{
+        display: flex;
+        margin-right: 180px;
+        justify-content: right;
+        opacity: 0.7;
+        transition: opacity 0.5s , margin 1s , filter 0.5s;
+        filter: contrast(120%);
+        filter: blur(1px);
+    }
+    
+}
+    @media (min-width :751px) and (max-width :999px){
+        .min1{
+            grid-template-columns: 1fr 1fr;
+        }
+        .pic{
+            opacity: 0.8;
+            transition: opacity 0.5s;
+        }
+    }
+.min1{
+    margin-top: 160px;
+    display: grid;
+    grid-template-columns: 350px 350px;
+    justify-content: space-around;
+}
+.center{
+    width: 350px;
+}
+.p-center{
+    font-family: Roboto ,arial;
+    font-weight: bold;
+    font-size: 36px;
+}
+.p1-center{
+    font-family: Roboto ,arial;
+    font-weight: 500;
+    font-size: 12px;
+    color: gray;
+}
+.email{
+    border: 1px solid rgb(235, 235, 235);
+    padding: 5px 15px;
+}
+.buttono{
+    margin-left: 19px;
+    padding: 15px 18px;
+    border: 1px solid rgb(60, 116, 221);
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(60, 116, 221);
+}
+.mid-text{
+    margin-top: 20px;
+}
+.tik {
+    display: inline-block;
+    width: 18px;
+    margin-right: 12px;
+}
+.tik-text{
+    display: inline-block;
+    font-size: 11px;
+    font-family: Roboto,arial;
+}
+.last-text{
+    display: flex;
+    margin-top: 20px;
+}
+
+
+.two-side{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.left-side{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 120px;
+}
+.left-side p{
+    margin-left: 18px;
+    color: rgb(97, 97, 97);
+    justify-content: space-between;
+    margin-left: 35px;
+}
+.right-side{
+    display: flex;
+    width: 250px;
+    margin-right: 120px;
+}
+.right-side p{
+    margin-left: 20px;
+    margin-top: 0;
+    margin-bottom: 2px;
+    font-size: 13px;
+    font-family: Roboto , arial;
+}
+.sup{height: 40px;}

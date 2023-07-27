@@ -1,0 +1,31 @@
+body{       
+    margin: 0;
+}
+.pic{
+    display: flex;
+}
+.div-blue{
+    position: relative;
+}
+.blue{
+    position: absolute;
+    margin-left: 5px;
+    height: 360px;
+    transform: rotate(-43deg);
+}
+.pink{
+    height: 360px;
+    position: absolute;
+    transform: rotate(-30deg);
+    margin-left: 5px;
+}
+.purple{
+    height: 360px;
+    position: absolute;
+    transform: rotate(-14deg);
+    margin-left: 5px;
+}
+.hero{
+    height: 360px;
+    margin-left: 5px;
+}
