@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+body
+{
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: #020202;
+  cursor: crosshair;
+}
+svg {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+}
+
+.card {
+  border-radius: 20px;
+
+	 position: relative;
+	 width: 300px;
+	 height: 425px;
+	 border: 10px solid #9612eb;
+	 margin: 60px auto 0 auto;
+	 box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255), rgba(255, 255, 255, 0.5)), url("https://images.unsplash.com/photo-1527481138388-31827a7c94d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+
+background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+	 background-color: #e6f0e6;
+}
+ .card .text-container {
+	 width: 80%;
+	 height: 80%;
+	 margin: auto;
+
+   border-radius: 20px;
+
+}
+ .strikethrough {
+	 text-decoration: line-through;
+}
+ .card .text-container #head {
+	 font-family: 'Nobile', sans-serif;
+	 font-size: 1.5em;
+	 margin: 60px auto 60px auto;
+     font-weight: bolder;
+}
+ .card p {
+	 font-size: 1.1em;
+	 line-height: 1.4;
+	 font-family: 'Nobile';
+	 color: #331717;
+	 font-style: italic;
+	 text-align: center;
+	 margin: 30px auto 0px auto;
+}
+ .card .front {
+	 position: absolute;
+	 width: 100%;
+	 height: 100%;
+	 margin: -10px 0px 0px -10px;
+	 border: 10px solid #9612eb;
+	 backface-visibility: hidden;
+	 background-color: #9612eb;
+   border-radius: 20px;
+
+	/* background-image: url($cover-image);
+	 */
+	 background-size: contain;
+	 transform-style: preserve-3d;
+	 transform-origin: 0% 50%;
+	 transform: perspective(800px) rotateY(0deg);
+	 transition: all 0.8s ease-in-out;
+}
+ .card:hover .front {
+	 transform: perspective(800px) rotateY(-170deg);
+	 background-color: #41718d;
+}
+ .card:hover .back {
+	 transform: perspective(800px) rotateY(-170deg);
+	 box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.3), inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
+	 background-color: #d2dcd2;
+      border-radius: 20px;
+
+}
+ .card .back {
+	 position: absolute;
+	 width: 100%;
+	 height: 100%;
+	 border: 10px solid #9612eb;
+	 margin: -10px 0px 0px -10px;
+	 backface-visibility: visible;
+	 filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, .5));
+	 transform-style: preserve-3d;
+	 transform-origin: 0% 50%;
+	 transform: perspective(800px) rotateY(0deg);
+	 transition: all 0.8s ease-in-out;
+	 background-color: #e6f0e6;
+	 box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+   border-radius: 20px;
+}
+
+.imgset
+{
+  position: relative;
+  z-index: 1;
+  margin-bottom: -215px;
+}
+.imgset img
+{
+    box-shadow: 0px 6px 11px 7px rgba(0, 0, 0, 0.22);
+    border-radius: 20px;
+}
+.sr{
+
+  width: 100%;
+}
+.srt{
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  position: absolute;
+  right: 25%;
+  left: 25%;
+  top: 140%;
+  align-items: center;
+  text-align: center;
+}
+.srt p{
+  font-size: 22px;
+  font-weight: 800;
+  font-family: Verdana, sans-serif;
+  color: white;
+}
+canvas{display:block}
+h1 {
+  position: absolute;
+  top: -60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-family: "Source Sans Pro";
+  font-size: 5em;
+  font-weight: 900;
+  -webkit-user-select: none;
+  user-select: none;
+}
+        </style>
+    </head>
+    <body>
+      <svg id="hearts" viewBox="-600 -400 1200 800" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <symbol  id="heart" viewBox="-69 -16 138 138">
+          <path d="M0,12
+                   C 50,-30 110,50  0,120
+                   C-110,50 -50,-30 0,12z"/>
+          </symbol>
+      </defs>
+      </svg>
+        <div  id="heart" viewBox="-69 -16 138 138" class="card">
+          <div class="back"></div>
+          <div class="front">
+            <div class="imgset">
+                 <img width="100%" src="qq.jpg">
+               </div>
+          </div>
+          <div class="text-container">
+            <p id="head">Happy Birthday my love</p>
+            <p>همسر عزیزم، می دانی که چقدر آرزو دارم همیشه بهترین چیزهایی را که دنیا می تواند ارائه دهد به تو بدهم. این روز هیچ تفاوتی ندارد. بنابراین من تولدت رو خیلی تبریک میگم و قول میدم که برای همیشه دوستت داشته باشم</p>
+            <p>Hope your day goes great!</p>
+          </div>
+        </div>
+
+          <div class="sr">
+            <div class="srt">
+              <h1>Happy Birthday</h1>
+              <p>ممنونم ازت منو توی این راه قرار دادی که بتونم  سمت علاقه هام برم</p>
+              <p>خیلی ازت ممنونم این کمترین کاری بود که میتونستم انجام بدم</p>
+              <p>تورو تا آخرین نفس دوستت دارم </p>
+              <p>&#x263e;...تولدت مبارک ماه من</p>
+            </div>
+            <canvas id="birthday"></canvas>
+          </div>
+
+
+
+
+
+
+
+<script>
+  // helper functions
+const PI2 = Math.PI * 2
+const random = (min, max) => Math.random() * (max - min + 1) + min | 0
+const timestamp = _ => new Date().getTime()
+
+// container
+class Birthday {
+  constructor() {
+    this.resize()
+
+    // create a lovely place to store the firework
+    this.fireworks = []
+    this.counter = 0
+
+  }
+  
+  resize() {
+    this.width = canvas.width = window.innerWidth
+    let center = this.width / 2 | 0
+    this.spawnA = center - center / 4 | 0
+    this.spawnB = center + center / 4 | 0
+    
+    this.height = canvas.height = window.innerHeight
+    this.spawnC = this.height * .1
+    this.spawnD = this.height * .5
+    
+  }
+  
+  onClick(evt) {
+     let x = evt.clientX || evt.touches && evt.touches[0].pageX
+     let y = evt.clientY || evt.touches && evt.touches[0].pageY
+     
+     let count = random(3,5)
+     for(let i = 0; i < count; i++) this.fireworks.push(new Firework(
+        random(this.spawnA, this.spawnB),
+        this.height,
+        x,
+        y,
+        random(0, 260),
+        random(30, 110)))
+          
+     this.counter = -1
+     
+  }
+  
+  update(delta) {
+    ctx.globalCompositeOperation = 'hard-light'
+    ctx.fillStyle = `rgba(20,20,20,${ 7 * delta })`
+    ctx.fillRect(0, 0, this.width, this.height)
+
+    ctx.globalCompositeOperation = 'lighter'
+    for (let firework of this.fireworks) firework.update(delta)
+
+    // if enough time passed... create new new firework
+    this.counter += delta * 3 // each second
+    if (this.counter >= 1) {
+      this.fireworks.push(new Firework(
+        random(this.spawnA, this.spawnB),
+        this.height,
+        random(0, this.width),
+        random(this.spawnC, this.spawnD),
+        random(0, 360),
+        random(30, 110)))
+      this.counter = 0
+    }
+
+    // remove the dead fireworks
+    if (this.fireworks.length > 1000) this.fireworks = this.fireworks.filter(firework => !firework.dead)
+
+  }
+}
+
+class Firework {
+  constructor(x, y, targetX, targetY, shade, offsprings) {
+    this.dead = false
+    this.offsprings = offsprings
+
+    this.x = x
+    this.y = y
+    this.targetX = targetX
+    this.targetY = targetY
+
+    this.shade = shade
+    this.history = []
+  }
+  update(delta) {
+    if (this.dead) return
+
+    let xDiff = this.targetX - this.x
+    let yDiff = this.targetY - this.y
+    if (Math.abs(xDiff) > 3 || Math.abs(yDiff) > 3) { // is still moving
+      this.x += xDiff * 2 * delta
+      this.y += yDiff * 2 * delta
+
+      this.history.push({
+        x: this.x,
+        y: this.y
+      })
+
+      if (this.history.length > 20) this.history.shift()
+
+    } else {
+      if (this.offsprings && !this.madeChilds) {
+        
+        let babies = this.offsprings / 2
+        for (let i = 0; i < babies; i++) {
+          let targetX = this.x + this.offsprings * Math.cos(PI2 * i / babies) | 0
+          let targetY = this.y + this.offsprings * Math.sin(PI2 * i / babies) | 0
+
+          birthday.fireworks.push(new Firework(this.x, this.y, targetX, targetY, this.shade, 0))
+
+        }
+
+      }
+      this.madeChilds = true
+      this.history.shift()
+    }
+    
+    if (this.history.length === 0) this.dead = true
+    else if (this.offsprings) { 
+        for (let i = 0; this.history.length > i; i++) {
+          let point = this.history[i]
+          ctx.beginPath()
+          ctx.fillStyle = 'hsl(' + this.shade + ',100%,' + i + '%)'
+          ctx.arc(point.x, point.y, 1, 0, PI2, false)
+          ctx.fill()
+        } 
+      } else {
+      ctx.beginPath()
+      ctx.fillStyle = 'hsl(' + this.shade + ',100%,50%)'
+      ctx.arc(this.x, this.y, 1, 0, PI2, false)
+      ctx.fill()
+    }
+
+  }
+}
+
+let canvas = document.getElementById('birthday')
+let ctx = canvas.getContext('2d')
+
+let then = timestamp()
+
+let birthday = new Birthday
+window.onresize = () => birthday.resize()
+document.onclick = evt => birthday.onClick(evt)
+document.ontouchstart = evt => birthday.onClick(evt)
+
+  ;(function loop(){
+  	requestAnimationFrame(loop)
+
+  	let now = timestamp()
+  	let delta = now - then
+
+    then = now
+    birthday.update(delta / 1000)
+  	
+
+  })()
+</script>
+
+        <script>
+          const colors = ["#e03776","#8f3e98","#4687bf","#3bab6f","#f9c25e","#f47274"];
+const SVG_NS = 'http://www.w3.org/2000/svg';
+const SVG_XLINK = "http://www.w3.org/1999/xlink";
+
+let heartsRy = []
+
+function useTheHeart(n){
+  let use = document.createElementNS(SVG_NS, 'use');
+  use.n = n;
+  use.setAttributeNS(SVG_XLINK, 'xlink:href', '#heart');
+  use.setAttributeNS(null, 'transform', `scale(${use.n})`);
+  use.setAttributeNS(null, 'fill', colors[n%colors.length]);
+  use.setAttributeNS(null, 'x', -69);
+  use.setAttributeNS(null, 'y', -69);
+  use.setAttributeNS(null, 'width', 138);
+  use.setAttributeNS(null, 'height', 138);
+  
+  heartsRy.push(use)
+  hearts.appendChild(use);
+}
+
+for(let n = 18; n >= 0; n--){useTheHeart(n)}
+
+function Frame(){
+  window.requestAnimationFrame(Frame);
+  for(let i = 0; i < heartsRy.length; i++){
+    if(heartsRy[i].n < 18){heartsRy[i].n +=.01
+     }else{
+     heartsRy[i].n = 0;
+     hearts.appendChild(heartsRy[i])
+    }
+    heartsRy[i].setAttributeNS(null, 'transform', `scale(${heartsRy[i].n})`);
+  }
+}
+
+Frame()
+
+        </script>
+        </body>
+</html>
